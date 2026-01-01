@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media print {
+  @page {
+    margin: 0;
+  }
+  body {
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+/* Fix for markdown lists not showing bullets/numbers due to Tailwind reset */
+.markdown-body ul {
+  list-style-type: disc;
+  padding-left: 2em;
+}
+
+.markdown-body ol {
+  list-style-type: decimal;
+  padding-left: 2em;
+}
